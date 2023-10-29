@@ -83,7 +83,8 @@ def send_notification(msg):
 
 def get_driver():
     if LOCAL_USE:
-        dr = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        # dr = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        dr = webdriver.Chrome(executable_path='../chromedriver-win64/chromedriver.exe')
     else:
         dr = webdriver.Remote(command_executor=HUB_ADDRESS, options=webdriver.ChromeOptions())
     return dr
